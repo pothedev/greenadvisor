@@ -1,0 +1,275 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Top Bar Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #445022;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+.flag-icon {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 3px;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+}
+
+/* Main Banner */
+.main-banner {
+    position: relative;
+    width: 100%;
+    height: 580px;
+}
+
+.main-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: start;
+}
+
+.banner-text h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.banner-text p {
+    margin-top: 15px;
+}
+
+.growing-guides {
+    padding: 40px;
+}
+
+.guides-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.guides-menu h2 {
+    font-size: 2em;
+    color: #333;
+    flex: 1;
+    margin: 0;
+}
+
+/* Search Bar Container */
+.search-bar {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Search Input */
+.search-bar input {
+    background-color: #d9d9d9;
+    padding: 5px 35px 5px 35px; /* Space for icon on the left */
+    border-radius: 15px;
+    border: none;
+    width: 100%;
+    max-width: 350px;
+    height: 35px;
+    transition: max-width 0.3s ease;
+    font-size: 16px;
+}
+
+/* Search Icon */
+.search-bar .search-icon {
+    position: absolute;
+    left: calc(50% - 165px); /* Align icon inside input, adjust as needed */
+    width: 17px;
+    height: 17px;
+    pointer-events: none;
+}
+
+
+.dropdown {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Button Styles */
+.dropbtn {
+    background-color: #445022;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Dropdown Content Styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+    .search-bar input {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 580px) {
+    .guides-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .dropdown {
+        order: -1;
+        align-self: flex-end;
+        width: 100%;
+    }
+
+    .search-bar,
+    h2 {
+        width: 100%;
+        text-align: left;
+    }
+
+    .search-bar input {
+        max-width: 100%;
+    }
+}
+
+/* Card Container and Card Styles */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 30px; /* Space between cards */
+}
+
+.card-link {
+    min-width: 250px;
+    flex: 0 1 calc(33.333% - 20px); /* 3 cards per row */
+    position: relative;
+    height: 250px;
+    width: 100%;
+}
+
+.card {
+    min-width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Card Text - Stack in bottom-left corner */
+.card-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Responsive Design: 2 Cards per row for medium screens */
+@media (max-width: 1000px) {
+    .card-link {
+        flex: 0 1 calc(50% - 20px); /* 2 cards per row */
+    }
+}
+
+/* Responsive Design: 1 Card per row for small screens */
+@media (max-width: 700px) {
+    .card-link {
+        flex: 0 1 calc(100% - 20px); /* 1 card per row */
+    }
+}
