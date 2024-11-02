@@ -1,70 +1,26 @@
-// Sample plant data
-import{
-    translations,
-    plantData
-} from './data.js';
+import { translations, plantData } from './data.js';
 
-
-let currentLanguage = 'uk'; // Default language
-let currentCategory = 'vegetables'; // Default category
-
-// Function to toggle language
-function toggleLanguage() {
-    currentLanguage = currentLanguage === 'en' ? 'uk' : 'en';
-
-    // Update flag icon
-    const flagIcon = document.getElementById("language-flag");
-    flagIcon.src = currentLanguage === 'en' ? "images/ukraine.png" : "images/uk.png";
-
-    // Translate static text elements
-    document.querySelectorAll("*").forEach((element) => {
-        const elementId = element.id;
-        const elementTitle= element.title;
-        if (elementId && translations[currentLanguage][elementId]) {
-            element.innerText = translations[currentLanguage][elementId];
-        }
-        else if (elementTitle && translations[currentLanguage][elementTitle]){
-            element.innerText = translations[currentLanguage][elementTitle];
-        }
-    });
-
-    // Update cards with the selected category in the new language
-    createCardsByCategory(currentCategory);
-}
-
-
-
-// Function to get plant data based on URL parameter
+// Function to load plant data based on URL parameter
 function loadPlantData() {
-    // Get the plant name from the URL parameter
     const params = new URLSearchParams(window.location.search);
     const plantName = params.get('name');
 
-    // Check if the plant data exists
     if (plantData[plantName]) {
         const plant = plantData[plantName];
 
         // Update the page content with plant information
-        if (currentLanguage === 'uk') {
-            document.getElementById('plant-name').textContent = translations[currentLanguage][plant.name] || plant.name;
-        } else {
-            document.getElementById('plant-name').textContent = plant.name;
-        }
-
-        document.getElementById('plant-name').title = plant.name;
+        document.getElementById('plant-name').textContent = translations['uk'][plant.name] || plant.name;
         document.getElementById('plant-image').src = plant.image;
 
-        // Generate the plant guide based on the current language
+        // Populate guide sections
         generatePlantGuide(plantName);
-        
     } else {
-        // Handle case where plant is not found
-        document.getElementById('plant-name').textContent = "Plant Not Found";
+        document.getElementById('plant-name').textContent = "Рослину не знайдено";
         document.getElementById('plant-image').style.display = "none";
     }
 }
 
-
+// Function to generate plant guide sections dynamically
 function generatePlantGuide(name) {
     const plantGuide = plantData[name];
     if (!plantGuide) return;
@@ -86,6 +42,5 @@ function generatePlantGuide(name) {
     });
 }
 
-// Run the function on page load
+// Load content on DOM load
 document.addEventListener('DOMContentLoaded', loadPlantData);
-window.toggleLanguage = toggleLanguage;

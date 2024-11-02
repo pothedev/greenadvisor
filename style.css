@@ -39,10 +39,32 @@ header {
     border-radius: 3px;
 }
 
+
+
+
+.nav-links {
+    margin-right: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.about-link:hover {
+    color: #ddd;
+}
+
 .language-toggle {
     display: flex;
     align-items: center;
 }
+
 
 /* Main Banner */
 .main-banner {
@@ -61,7 +83,7 @@ header {
 .banner-text {
     position: absolute;
     top: 50%;
-    left: 20%;
+    left: 270px;
     width: 400px;
     transform: translate(-50%, -50%);
     color: white;
@@ -103,29 +125,39 @@ header {
     justify-content: center;
     align-items: center;
     position: relative;
+    max-width: 350px;
+}
+
+/* Wrap input and icon together */
+.search-bar .input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 /* Search Input */
 .search-bar input {
     background-color: #d9d9d9;
-    padding: 5px 35px 5px 35px; /* Space for icon on the left */
+    padding-left: 40px; /* Space for icon */
+    padding-right: 15px;
     border-radius: 15px;
     border: none;
     width: 100%;
-    max-width: 350px;
     height: 35px;
-    transition: max-width 0.3s ease;
     font-size: 16px;
 }
 
-/* Search Icon */
+/* Search Icon - Position icon using Flex */
 .search-bar .search-icon {
     position: absolute;
-    left: calc(50% - 165px); /* Align icon inside input, adjust as needed */
+    left: 10px; /* Adjust as needed to fine-tune */
     width: 17px;
     height: 17px;
     pointer-events: none;
 }
+
+
 
 
 .dropdown {
@@ -273,3 +305,7 @@ header {
         flex: 0 1 calc(100% - 20px); /* 1 card per row */
     }
 }
+
+
+
+
