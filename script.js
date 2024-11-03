@@ -132,3 +132,7 @@ window.addEventListener('scroll', () => {
 });
 
 window.showCategory = showCategory;
+const about = document.getElementById('about');
+const advices = document.getElementById('advices');
+about.onclick = () => saveState(currentCategory);
+advices.onclick = () => saveState(currentCategory);

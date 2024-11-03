@@ -2244,8 +2244,6 @@ export const vegetables = [
     { name: "Zucchini", image: "images/zucchini.jpg" },
     { name: "Pumpkin", image: "images/pumpkin.jpg" },
     { name: "Eggplant", image: "images/eggplant.jpg" },
-    { name: "Lettuce", image: "images/lettuce.jpg" },
-    { name: "Spinach", image: "images/spinach.jpg" },
     { name: "Broccoli", image: "images/broccoli.jpg" },
     { name: "Corn", image: "images/corn.jpg" },
     { name: "Peas", image: "images/peas.jpg" },
@@ -2258,19 +2256,19 @@ export const fruits = [
     { name: "Apple", image: "images/apple.jpg" },
     { name: "Pear", image: "images/pear.jpg" },
     { name: "Plum", image: "images/plum.jpg" },
-    { name: "Cherry", image: "images/cherry.jpg" },
     { name: "Peach", image: "images/peach.jpg" },
     { name: "Apricot", image: "images/apricot.jpg" },
     { name: "Grape", image: "images/grape.jpg" },
     { name: "Cherry Plum", image: "images/cherryplum.jpg" },
     { name: "Melon", image: "images/melon.jpg" },
     { name: "Nectarine", image: "images/nectarine.jpg" },
-    { name: "Mulberry", image: "images/mulberry.jpg" }
+    
 ];
 
 export const berries = [
     { name: "Strawberry", image: "images/strawberry.jpg" },
     { name: "Raspberry", image: "images/raspberry.jpg" },
+    { name: "Cherry", image: "images/cherry.jpg" },
     { name: "Blackberry", image: "images/blackberry.jpg" },
     { name: "Blueberry", image: "images/blueberry.jpg" },
     { name: "Currant", image: "images/currant.jpg" },
@@ -2278,7 +2276,8 @@ export const berries = [
     { name: "Sea Buckthorn", image: "images/seabuckthorn.jpg" },
     { name: "Cowberry", image: "images/cowberry.jpg" },
     { name: "Elderberry", image: "images/elderberry.jpg" },
-    { name: "Watermelon", image: "images/watermelon.jpg" }
+    { name: "Watermelon", image: "images/watermelon.jpg" },
+    { name: "Mulberry", image: "images/mulberry.jpg" }
 ];
 
 export const herbs = [
@@ -2291,7 +2290,9 @@ export const herbs = [
     { name: "Oregano", image: "images/oregano.jpg" },
     { name: "Lovage", image: "images/lovage.jpg" },
     { name: "Basil", image: "images/basil.jpg" },
-    { name: "Rosemary", image: "images/rosemary.jpg" }
+    { name: "Rosemary", image: "images/rosemary.jpg" },
+    { name: "Lettuce", image: "images/lettuce.jpg" },
+    { name: "Spinach", image: "images/spinach.jpg" },
 ];
 
 // Store translations for text elements in both languages
@@ -2304,7 +2305,7 @@ export const translations = {
         "vegetables": "Овочі",
         "fruits": "Фрукти",
         "berries": "Ягоди",
-        "herbs": "Трави",
+        "herbs": "Зелень",
         "search": "Пошук",
         "Tomato": "Помідор",
         "Cucumber": "Огірок",
@@ -2432,7 +2433,7 @@ export const translations = {
     "Овочі": "vegetables",
     "Фрукти": "fruits",
     "Ягоди": "berries",
-    "Трави": "herbs",
+    "Зелень": "herbs",
     "Пошук": "search",
     "Помідор": "Tomato",
     "Огірок": "Cucumber",

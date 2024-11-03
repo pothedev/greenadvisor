@@ -307,5 +307,23 @@ header {
 }
 
 
+.motivation{
+    padding-top: 30px;
+    font-style: italic;
+}
 
+.about-link{
+    padding-left: 30px;
+    padding-right: 20px;
+}
 
+.language-toggle a{
+    font-size: 17px;
+}
+
+#link1{
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
