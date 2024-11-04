@@ -134,5 +134,7 @@ window.addEventListener('scroll', () => {
 window.showCategory = showCategory;
 const about = document.getElementById('about');
 const advices = document.getElementById('advices');
+const title = document.getElementById('link');
 about.onclick = () => saveState(currentCategory);
 advices.onclick = () => saveState(currentCategory);
+title.onclick = () => saveState(currentCategory);

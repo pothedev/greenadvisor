@@ -44,3 +44,5 @@ function generatePlantGuide(name) {
 
 // Load content on DOM load
 document.addEventListener('DOMContentLoaded', loadPlantData);
+const title = document.getElementById('link');
+title.onclick = () => saveState(currentCategory);
